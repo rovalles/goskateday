@@ -1,0 +1,37 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+.font-header {
+    font-family: "Bebas Neue", sans-serif;
+}
+.custom-select {
+    background: #38bdf8
+        url("data:image/svg+xml,%3Csvg fill='white' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 7l4.5 4 4.5-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+        no-repeat right 0.75rem center;
+    background-size: 1rem;
+}
+.active-dot {
+    background-color: #facc15 !important; /* yellow-400 */
+    width: 1.5rem;
+    height: 1.5rem;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    display: block;
+    box-shadow: 0 0 6px #facc15;
+}
+.bg-primary {
+    background-color: #38bdf8;
+}
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adjust values as needed */
+}

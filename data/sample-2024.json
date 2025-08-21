@@ -1,0 +1,24 @@
+{
+  "date": "2024-06-21",
+  "spots": [
+    {
+      "startTime": "10:00 AM",
+      "endTime": "11:00 AM",
+      "address": "Klyde Warren Park",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Klyde+Warren+Park,+Dallas,+TX",
+      "images": [
+        "https://placehold.co/600x400?text=Klyde+Warren+1",
+        "https://placehold.co/600x400?text=Klyde+Warren+2"
+      ]
+    },
+    {
+      "startTime": "11:00 AM",
+      "endTime": "12:00 PM",
+      "address": "Ferris Plaza",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ferris+Plaza,+Dallas,+TX",
+      "images": [
+        "https://placehold.co/600x400?text=Ferris+Plaza+1"
+      ]
+    }
+  ]
+}

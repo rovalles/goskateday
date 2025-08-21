@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json">
+    <title>Go Skate Day Dallas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles.css?v=1">
+</head>
+<body class="bg-white text-gray-800">
+    <div id="app" class="max-w-3xl mx-auto p-4" v-cloak>
+        <header-section
+            :header-images="headerImages"
+            :formatted-event-date="formattedEventDate">
+        </header-section>
+
+        <timeline-section
+            :current-year-timeline-data="currentYearTimelineData"
+            v-model="selectedYear"
+            :years="years"
+            :timeline="timeline"
+            :has-gallery="hasGallery"
+            :current-year-gallery-images="currentYearGalleryImages"
+            :open-all-pictures-modal="openAllPicturesModal"
+            :open-spot-pictures-modal="openSpotPicturesModal"
+            :is-active="isActive"
+        ></timeline-section>
+
+        <sponsors-section
+            :current-year-sponsors="currentYearSponsors"
+            :selected-year="selectedYear"
+        ></sponsors-section>
+
+        <contact-footer
+            :contact-email="contactEmail"
+            :instagram-url="instagramUrl"
+        ></contact-footer>
+
+        <app-modal
+            :show="showModal"
+            :title="modalTitle"
+            :images="modalPictures"
+            @close="closeModal"
+        />
+    </div>
+
+    <script type="module" src="/js/main.js?v=2"></script>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+{
+  "date": "2025-06-21",
+  "spots": [
+    {
+      "startTime": "3:00 PM",
+      "endTime": "5:00 PM",
+      "address": "Hooters, Downtown Dallas",
+      "mapUrl": "https://maps.app.goo.gl/Gbfd19YZqC43jTuX9"
+    },
+    {
+      "startTime": "5:00 PM",
+      "endTime": "5:45 PM",
+      "address": "4 Corners (Downtown Dallas)",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Downtown+Dallas+TX"
+    },
+    {
+      "startTime": "5:45 PM",
+      "endTime": "6:15 PM",
+      "address": "Griffin Bench + Lot, Dallas",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Griffin+St+Dallas+TX"
+    },
+    {
+      "startTime": "6:15 PM",
+      "endTime": "6:45 PM",
+      "address": "Ross Fire Station Gap, Dallas",
+      "mapUrl": "https://maps.app.goo.gl/P3pVAkWvacKK89wc9"
+    },
+    {
+      "startTime": "6:45 PM",
+      "endTime": "7:00 PM",
+      "address": "Hooters, Downtown Dallas",
+      "mapUrl": "https://maps.app.goo.gl/Gbfd19YZqC43jTuX9"
+    }
+  ],
+  "sponsors": [
+    {
+      "name": "@devotionskateco",
+      "url": "https://instagram.com/devotionskateco"
+    },
+    {
+      "name": "@skucciskateboards",
+      "url": "https://instagram.com/skucciskateboards"
+    },
+    {
+      "name": "@jabaah",
+      "url": "https://instagram.com/jabaah"
+    },
+    {
+      "name": "@crewciallife",
+      "url": "https://instagram.com/crewciallife"
+    },
+    {
+      "name": "@lit_texas",
+      "url": "https://instagram.com/lit_texas"
+    },
+    {
+      "name": "@gasoline.usa",
+      "url": "https://instagram.com/gasoline.usa"
+    },
+    {
+      "name": "@humandior.store",
+      "url": "https://instagram.com/humandior.store"
+    },
+    {
+      "name": "@ronin.skate.clan",
+      "url": "https://instagram.com/ronin.skate.clan"
+    },
+    {
+      "name": "@dallashempcompany",
+      "url": "https://instagram.com/dallashempcompany"
+    },
+    {
+      "name": "@1530tx",
+      "url": "https://instagram.com/1530tx"
+    },
+    {
+      "name": "@super8skates",
+      "url": "https://instagram.com/super8skates"
+    },
+    {
+      "name": "@camparnoldskatechurch",
+      "url": "https://www.instagram.com/camparnoldskatechurch"
+    },
+    {
+      "name": "@nowskateboards",
+      "url": "https://www.instagram.com/nowskateboards"
+    },
+    {
+      "name": "@corememorytattoo",
+      "url": "https://www.instagram.com/corememorytattoo"
+    }
+  ]
+}
