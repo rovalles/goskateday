@@ -7,7 +7,7 @@
     <title>Go Skate Day Dallas</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/styles.css?v=1">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-white text-gray-800">
     <div id="app" class="max-w-3xl mx-auto p-4" v-cloak>
@@ -46,7 +46,10 @@
         />
     </div>
 
-    <script type="module" src="/js/main.js?v=2"></script>
+    <script type="module">
+      try { await import('./js/bundle.js'); }
+      catch { await import('./js/main.js'); }
+    </script>
 </body>
 </html>
 
