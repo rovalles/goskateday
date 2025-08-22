@@ -14,7 +14,7 @@ export async function fetchTimelineDataForYear(year, isDebugMode) {
   // CHANGED PATH: Use an absolute path from the server root
   const path = `/data/${filename}`;
 
-  console.log(`Workspaceing data for ${year} from: ${path}`);
+  console.log(`Fetching data for ${year} from: ${path}`);
   try {
     const response = await fetch(path);
     if (!response.ok) {
