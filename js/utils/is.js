@@ -39,7 +39,10 @@ function isChecker(instance = null) {
     },
     hasGallery() {
       const data = instance.currentYearTimelineData;
-      return !!data?.galleryId && (!data.spots || data.spots.length === 0);
+      return (
+        !!data?.galleryId ||
+        isChecker.hasContent(instance.currentYearGalleryImages)
+      );
     },
     hasGalleryImages() {
       return isChecker.hasContent(instance.currentYearGalleryImages);
