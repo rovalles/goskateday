@@ -6,9 +6,9 @@ Utilities for managing Go Skate Day images.
 
 The repository includes a `compress-images.sh` script that:
 
-- scans `compressed/<year>` for source images
+- scans `compress/<year>` for source images
 - writes compressed copies to `data/images/<year>` without removing the originals
-- copies any would-be overwrites to `compression/duplicate/<year>`
+- copies any would-be overwrites to `compress/duplicate/<year>`
 - generates or updates `data/<year>.json` with the current list of gallery images
 
 Run the script after placing photos in their year folder:

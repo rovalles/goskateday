@@ -1,15 +1,15 @@
 #!/bin/bash
 set -euo pipefail
 
-# Compress images stored under ./compressed/<year>/ and build year JSON metadata.
+# Compress images stored under ./compress/<year>/ and build year JSON metadata.
 # Each image is saved to ./data/images/<year>/.
-# Existing images are preserved; duplicates are copied to ./compression/duplicate/<year>/.
+# Existing images are preserved; duplicates are copied to ./compress/duplicate/<year>/.
 
 QUALITY=75
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SOURCE_DIR="$BASE_DIR/compressed"
+SOURCE_DIR="$BASE_DIR/compress"
 DEST_BASE="$BASE_DIR/data/images"
-DUP_BASE="$BASE_DIR/compression/duplicate"
+DUP_BASE="$SOURCE_DIR/duplicate"
 
 compress_image() {
   local img="$1"
@@ -20,6 +20,7 @@ compress_image() {
   local dest_file="$dest_dir/$filename"
 
   if [[ -e "$dest_file" ]]; then
+    mkdir -p "$dup_dir"
     cp "$img" "$dup_dir/$filename"
     echo "Duplicate found: $filename copied to $dup_dir"
     return
@@ -43,7 +44,7 @@ generate_json() {
   local filePath="$BASE_DIR/data/${year}.json"
 
   local images
-  images=$(find "$dest_dir" -maxdepth 1 -type f -printf '%f\n' |
+  images=$(ls -1 "$dest_dir" 2>/dev/null | \
             sort | jq -R -s -c 'split("\n")[:-1] | map("/data/images/'"$year"'/" + .)')
 
   if [[ -f "$filePath" ]]; then
@@ -64,7 +65,7 @@ process_year() {
   local dest_dir="$DEST_BASE/$year"
   local dup_dir="$DUP_BASE/$year"
 
-  mkdir -p "$dest_dir" "$dup_dir"
+  mkdir -p "$dest_dir"
 
   find "$year_path" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read -r img; do
     compress_image "$img" "$dest_dir" "$dup_dir"
