@@ -18,11 +18,17 @@ export const ImageSlideshow = {
     return {
       currentIndex: 0,
       isLoading: false, // State to track image loading
+      usePlaceholder: false, // Whether to display a placeholder image
+      placeholderImage:
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23ddd'/%3E%3Ctext x='200' y='150' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='20'%3EImage unavailable%3C/text%3E%3C/svg%3E",
     };
   },
   computed: {
     currentImageSrc() {
-      const src = this.images.length > 0 ? this.images[this.currentIndex] : "";
+      const src =
+        this.usePlaceholder || this.images.length === 0
+          ? this.placeholderImage
+          : this.images[this.currentIndex];
       console.log("ImageSlideshow: currentImageSrc", src);
       return src;
     },
@@ -76,6 +82,7 @@ export const ImageSlideshow = {
     reset() {
       this.currentIndex = 0;
       this.isLoading = false;
+      this.usePlaceholder = false;
     },
     /**
      * Preloads an image at a given index and updates the currentIndex when loaded.
@@ -88,6 +95,7 @@ export const ImageSlideshow = {
       }
 
       this.isLoading = true; // Indicate that an image is loading
+      this.usePlaceholder = false; // Reset placeholder state when loading a new image
       const imageUrl = this.images[index];
       const img = new Image(); // Create a new Image object to preload
 
@@ -99,9 +107,13 @@ export const ImageSlideshow = {
 
       img.onerror = (e) => {
         console.error(`Failed to load image: ${imageUrl}`, e);
-        // Optionally, handle error: skip image, show placeholder, etc.
-        this.currentIndex = index; // Still update index to move past the broken image
-        this.isLoading = false; // Reset loading state
+        const nextIndex = index + 1;
+        if (nextIndex < this.images.length) {
+          this.loadImage(nextIndex); // Skip to the next image
+        } else {
+          this.usePlaceholder = true; // No more images, show placeholder
+          this.isLoading = false; // Reset loading state
+        }
       };
 
       img.src = imageUrl; // Start loading the image
